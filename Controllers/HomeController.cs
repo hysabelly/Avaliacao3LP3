@@ -14,7 +14,7 @@ public class HomeController : Controller
 
 public IActionResult Index()
     {
-        return View(ShoppingController.lojas);
+        return View();
     }
 
     public IActionResult Privacy()
