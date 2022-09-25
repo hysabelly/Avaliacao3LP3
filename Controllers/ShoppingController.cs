@@ -17,16 +17,28 @@ public class ShoppingController : Controller
 
     public IActionResult Admin()
     {
-        return View();
+        return View(lojas);
     }
-
-    public IActionResult Detalhes()
-    {       
-        return View();
-    }
-
+    
     public IActionResult Cadastro()
     {
+        return View(lojas);
+    }
+
+    public IActionResult Detalhes(int id)
+    {
+        return View(lojas[id - 1]);
+    }
+
+    public IActionResult Deletar(int id)
+    {
+        lojas.RemoveAt(id - 1);
+
+        for(var i = id - 1; i < lojas.Count; i++)
+        {
+            lojas[i].Id -= 1;
+        }
+       
         return View();
     }
 
