@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using AvaliacaoLP3.Models;
 using System.Diagnostics;
-using AvaliacaoLP3.Controllers;
 namespace AvaliacaoLP3.ViewModels;
 
 public class LojaViewModel 
