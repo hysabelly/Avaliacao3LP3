@@ -1,0 +1,23 @@
+@model List<Avaliacao3LP3.ViewModels.LojasViewModel>
+
+    @{
+        ViewData["Title"] = "Admin";
+    }
+    
+    <h1>Admin dos Estabelecimentos - Lojas e Quiosques</h1>
+    
+    @if(Model.Count == 0)
+    {
+        <p>Não há nenhuma loja ou quiosque cadastrado.</p>
+    }
+    else
+    {
+    	<p>Número de estabelecimentos cadastrados: @Model.Count </p>
+
+        @foreach(var loja in Model)
+        {
+            <h3>@lojas.Nome</h3>
+            <p class="link"><a href="/Loja/Detalhes/@loja.Id">Detalhes +</a></p>
+            <p class="link"><a href="/Loja/Deletar/@loja.Id">Deletar +</a></p>
+        }
+    }
